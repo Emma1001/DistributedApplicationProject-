@@ -9,5 +9,5 @@ To connect to your database server first in the solution go to FootballTransferD
 Change the sql string connection so that it matches your server
 <img src="https://github.com/Emma1001/DistributedApplicationProject-/blob/master/images/Second.png">
 
-Then in the Package Manager Console write “update-database”
+Then in the Package Manager Console write “update-database” and make sure that the Default Project is "Core/Data"
 <img src="https://github.com/Emma1001/DistributedApplicationProject-/blob/master/images/Third.png">
