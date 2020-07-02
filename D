@@ -1,0 +1,5 @@
+To connect to your database server first in the solution go to FootballTransferDbContext
+
+<img src="https://github.com/Emma1001/DistributedApplicationProject-/blob/master/images/First.png">
+
+![](https://github.com/Emma1001/DistributedApplicationProject-/blob/master/images/First.png)
