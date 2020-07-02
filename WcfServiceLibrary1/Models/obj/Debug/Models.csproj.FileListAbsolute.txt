@@ -1,0 +1,5 @@
+D:\testProjectFootball\WcfServiceLibrary1\Models\bin\Debug\Models.dll
+D:\testProjectFootball\WcfServiceLibrary1\Models\bin\Debug\Models.pdb
+D:\testProjectFootball\WcfServiceLibrary1\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\testProjectFootball\WcfServiceLibrary1\Models\obj\Debug\Models.dll
+D:\testProjectFootball\WcfServiceLibrary1\Models\obj\Debug\Models.pdb

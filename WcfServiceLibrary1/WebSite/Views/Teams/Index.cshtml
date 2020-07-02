@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebSite.Models.TeamViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Teams</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+
+    @using (Html.BeginForm("Index", "Teams", FormMethod.Get))
+    {
+        <b> Search Option: </b>@Html.RadioButton("option", "TeamName") <text>Name</text> @Html.RadioButton("option", "Country") <text>Country</text>
+    @Html.TextBox("search") <input type = "submit"
+        name = "submit"
+        value = "Search" />
+        }
+    </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetWorth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AverageAgePlayers)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetWorth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AverageAgePlayers)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="nav-link text-dark" asp-area="" asp-controller="Teams" asp-action="Index">Back</a>

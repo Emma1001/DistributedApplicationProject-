@@ -1,0 +1,59 @@
+﻿@model WebSite.Models.TransferViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>TransferViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="PlayerId" class="control-label"></label>
+                @Html.DropDownListFor(player => player.PlayerId, ViewBag.Players as IEnumerable<SelectListItem>, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="PlayerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamLeftId" class="control-label"></label>
+                @Html.DropDownListFor(team => team.TeamLeftId, ViewBag.Teams as IEnumerable<SelectListItem>, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="TeamLeftId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamJoinedId" class="control-label"></label>
+                @Html.DropDownListFor(team => team.TeamJoinedId, ViewBag.Teams as IEnumerable<SelectListItem>, htmlAttributes: new { @class = "form-control" })
+                <span asp-validation-for="TeamJoinedId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoneyAmount" class="control-label"></label>
+                <input asp-for="MoneyAmount" class="form-control" />
+                <span asp-validation-for="MoneyAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTransfer" class="control-label"></label>
+                <input asp-for="DateTransfer" class="form-control" />
+                <span asp-validation-for="DateTransfer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
